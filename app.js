@@ -1,7 +1,8 @@
 
-// notre Application EPRESS
+// notre Application EXPRESS
 
 const express = require('express');
+require('./db/db'); //include a function that connect api to data base
 const app = express();  // methode express
 
 app.use((req, res, next) => {
