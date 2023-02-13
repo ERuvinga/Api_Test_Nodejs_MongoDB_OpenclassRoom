@@ -11,6 +11,7 @@ router.get('/', productCtrl.getAllProducts);
 
 //find one product with Id
 router.get('/:id', productCtrl.getOneProduct);
+router.options('/:id', productCtrl.getOneProduct);
 
 //update data of One product
 router.put('/:id', productCtrl.updateProduct);

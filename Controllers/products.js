@@ -4,11 +4,11 @@ const ModelProduct = require('../Model/product');
 
 // create new product in data base
 exports.createProduct = (req, res) => {
-    const product = new ModelProduct({
+    const NewProduct = new ModelProduct({
         ...req.body
     })
 
-    product.save()
+    NewProduct.save()
         .then((product) => {
             res.json({ product });
             res.status(200);
@@ -42,9 +42,9 @@ exports.getOneProduct = (req, res) => {
 
     ModelProduct.findOne({ _id: idProduct })
         .then(Product => {
-            console.log(Product);
+            console.log(`_id: ${idProduct}`);
             res.status(200);
-            res.json({ Product })
+            res.json({ product: Product });
         })
         .catch(error => {
             res.status(404);
@@ -56,5 +56,5 @@ exports.getOneProduct = (req, res) => {
 //update data of product with _id product
 
 exports.updateProduct = (req, res) => {
-    console.log(req.params);
+    console.log('Update Datas');
 };
