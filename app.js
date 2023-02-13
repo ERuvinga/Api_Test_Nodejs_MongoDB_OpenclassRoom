@@ -16,8 +16,6 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 //routes
-app.use('/api/products',routerProduct);
-
-
+app.use('/api/products', routerProduct);
 
 module.exports = app;
